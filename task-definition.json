@@ -1,13 +1,14 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-2:659180389800:task-definition/ele-app:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-2:659180389800:task-definition/eleangel-app:1",
     "containerDefinitions": [
         {
-            "name": "ele-app",
-            "image": "659180389800.dkr.ecr.us-east-2.amazonaws.com/ele-app",
-            "cpu": 0,
+            "name": "eleangel-app",
+            "image": "659180389800.dkr.ecr.us-east-2.amazonaws.com/eleangel-app",
+            "cpu": 1024,
+            "memory": 1024,
             "portMappings": [
                 {
-                    "name": "ele-app-80-tcp",
+                    "name": "eleangel-app-80-tcp",
                     "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
@@ -19,16 +20,16 @@
             "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "ulimits": [
+            "ulimits": [],
+            "resourceRequirements": [
                 {
-                    "name": "cpu",
-                    "softLimit": 1,
-                    "hardLimit": 1
+                    "value": "1",
+                    "type": "GPU"
                 }
             ]
         }
     ],
-    "family": "ele-app",
+    "family": "eleangel-app",
     "taskRoleArn": "arn:aws:iam::659180389800:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::659180389800:role/ecsTaskExecutionRole",
     "networkMode": "bridge",
@@ -62,7 +63,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-07-11T23:45:57.833Z",
+    "registeredAt": "2023-07-12T00:28:31.012Z",
     "registeredBy": "arn:aws:iam::659180389800:root",
     "tags": []
 }
